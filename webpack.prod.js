@@ -18,7 +18,7 @@ module.exports = merge(common, {
           },
           outputPath: 'img/',
           publicPath: (url, resourcePath, context) => {
-            return `https://dev.39391.ru/dist/img/${url}`
+            return `img/${url}`
             /*
             const relativePath = path.relative(context, resourcePath);
             if (String(relativePath).includes('content')) {
