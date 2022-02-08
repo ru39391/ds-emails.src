@@ -1,0 +1,35 @@
+extends base
+
+block meta
+  - var title = '500 бонусных рублей';
+
+block header
+  div(style=container)
+    +header('header-1.png','500 бонусных<br>рублей','Здравствуйте!<br>Недавно вы заходили на наш сайт и оставили в корзине некоторые товары. Сегодня мы подарим дополнительно 500 бонусных рублей на ваш счет при покупке:')
+
+block pos
+  - var cards = [{src: card__src, title: 'Зимние шины YokohamaYokohamaYokohama'},{src: card__src, title: card__title},{src: card__src, title: card__title},{src: card__src, title: card__title}]
+  table(style="margin:0 0 8px 0;" width="100%" height="100%" border="0" cellspacing="0" cellpadding="0")
+    tr
+      each cards__item in cards
+        td(style="width:25%;height:100%;align-items:top;")
+          +card(cards__item.src,cards__item.title)
+
+block divider
+  div(style=container)
+    +banner('banner-1.png','Шиномонтаж в<br>Ростове-на-Дону','Записаться онлайн', '206px', '34')
+
+block category
+  div(style=container)
+    div(style="padding:0 32px 0 32px;")
+      h1(style=h1) Вам так же может быть интересно:
+  - var category = [{bg: 'category-1.png', title: 'Автошторки', color: '#0079B6'},{bg: 'category-2.png', title: 'пружины с занижением', color: '#0079B6'},{bg: 'category-3.png', title: 'Авто электроника', color: '#0079B6'},{bg: 'category-4.png', title: 'Авточехлы', color: '#fff'}]
+  table(style="margin:0 0 16px 0;" width="100%" height="100%" border="0" cellspacing="0" cellpadding="0")
+    tr
+      each category__item in category
+        td(style="width:25%;height:100%;align-items:top;")
+          +category(category__item.bg,category__item.title,category__item.color)
+
+block wrapper
+  div(style=container)
+    +banner('banner-2.png','Подбор запчастей<br>по VIN-коду','Смотреть на сайте', '248px', '34', '#fff')

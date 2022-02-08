@@ -1,0 +1,30 @@
+extends main
+
+block meta
+  - var title = '500 бонусных рублей, проконсультироваться';
+
+block header
+  div(style=container)
+    +header('header-5.png','100 бонусных<br>рублей','Здравствуйте!<br>Мы обратили внимание, что вы давно не заходили на наш сайт. Чтобы покупки были еще выгодней дарим вам дополнительные 100 бонусных рублей на личный счет.','355','64','8')
+
+block pos__readmore
+  div(style=container)
+    table(width="100%" height="100%" border="0" cellspacing="0" cellpadding="0")
+      tr
+        td(style="padding:18px 0 40px 0;text-align:center;")
+          +btn('больше товаров на сайте', '330px')
+
+block divider
+  div(style=container)
+    a(href="#" style='height:258px;display:block;margin:0 0 24px 0;overflow:hidden;box-sizing:border-box;border-radius:8px;background-image:url(img/banners/banner-9.png);background-repeat:no-repeat;background-position:center top;background-size:100% auto;')
+
+block category
+  div(style=container)
+    div(style="padding:0 32px 0 32px;")
+      h1(style=h1) Вам так же может быть интересно:
+  - var category = [{bg: 'category-3.png', title: 'Авто электроника', color: '#0079B6'},{bg: 'category-1.png', title: 'Автошторки', color: '#0079B6'},{bg: 'category-4.png', title: 'Авточехлы', color: '#fff'},{bg: 'category-6.png', title: 'Автохимия', color: '#0079B6'}]
+  table(style="margin:0 0 16px 0;" width="100%" height="100%" border="0" cellspacing="0" cellpadding="0")
+    tr
+      each category__item in category
+        td(style="width:25%;height:100%;align-items:top;")
+          +category(category__item.bg,category__item.title,category__item.color)

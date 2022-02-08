@@ -1,0 +1,30 @@
+mixin btn(btn__caption, btn__width="100%", btn__type="true")
+    - var btn__style = `width:${btn__width};padding:8px 8px 8px 8px;display:inline-block;align-items:top;font-size:16px;line-height:22px;font-weight:600;color:#fff;text-align:center;text-transform:uppercase;box-sizing:border-box;text-decoration:none;border-radius:8px;background-color:#008BD1;`;
+    if (btn__type)
+        a(href="#" style=btn__style)= btn__caption
+    else
+        span(style=btn__style)= btn__caption
+
+mixin header(header__bg, header__title, header__text, header__text_width="300", header__title_mb="54", header_mb="10")
+    div(style=`height:300px;margin:0 0 ${header_mb}px 0;padding:32px 32px 0 32px;overflow:hidden;box-sizing:border-box;border-radius:8px;background-image:url(img/header/${header__bg});background-repeat:no-repeat;background-position:center top;background-size:100% auto;`)
+        span(style=`display:block;margin:0 0 ${header__title_mb}px 0;font-size:36px;line-height:40px;font-weight:bold;color:#008BD1;`)!= header__title
+        span(style=`width:${header__text_width}px;display:block;font-size:16px;font-weight:400;line-height:18px;color:#fff;`)!= header__text
+
+mixin banner(banner__bg, banner__title, banner__btn, banner__btn_width="248px", banner_mb="8", banner__color="#008BD1")
+    div(style=`height:224px;margin:0 0 ${banner_mb}px 0;padding:40px 32px 0 32px;overflow:hidden;box-sizing:border-box;border-radius:8px;background-image:url(img/banners/${banner__bg});background-repeat:no-repeat;background-position:center top;background-size:100% auto;`)
+        span(style=`display:block;margin:0 0 30px 0;font-size:36px;line-height:40px;font-weight:bold;color:${banner__color};`)!= banner__title
+        +btn(banner__btn, banner__btn_width)
+
+mixin card(card__src, card__title, card__btn="подробнее")
+    div(style="height:100%;padding:0 5px 0 5px;")
+        a(href="#" style="height:100%;padding:8px 10px 16px 10px;display:block;overflow:hidden;box-sizing:border-box;text-decoration:none;border-radius:8px;border:1px solid rgba(0, 0, 0, 0.12);background-color:#fff;")
+            span(style="display:block;margin:0 0 8px 0;text-align:center;")
+                img(style=img src=card__src alt=card__title width="160" height="160")
+            span(style="height:88px;display:block;overflow:hidden;margin:0 0 12px 0;font-size:16px;line-height:22px;overflow:hidden;word-break:break-word;text-overflow:ellipsis;color:#525252;")!= card__title
+            span(style="display:block;text-align:center;")
+                +btn(card__btn, '100%', false)
+
+mixin category(category__bg, category__title, category__color)
+    div(style="padding:0 5px 0 5px;")
+        a(href="#" style=`height:248px;display:block;padding:193px 15px 20px 10px;overflow:hidden;box-sizing:border-box;border-radius:8px;border:1px solid rgba(0, 0, 0, 0.12);text-align:center;text-decoration:none;background-image:url(img/category/${category__bg});background-repeat:no-repeat;background-position:center top;`)
+            span(style=`height:40px;display:block;font-size:16px;line-height:18px;text-transform:uppercase;color:${category__color};`)!= category__title

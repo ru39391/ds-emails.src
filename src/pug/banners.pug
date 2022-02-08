@@ -1,0 +1,34 @@
+extends base
+
+block meta
+  - var title = '100 бонусных рублей, баннеры';
+
+block header
+  div(style=container)
+    +header('header-4.png','100 бонусных<br>рублей','Здравствуйте!<br>Недавно вы совершали покупку на нашем сайте. Дарим вам доплнительные 100 бонусных рублей ваш счет для приобретения услуг, которые могут вас заинтересовать:','420','72','8')
+
+block divider
+  div(style=container)
+    +banner('banner-1.png','Шиномонтаж в<br>Ростове-на-Дону','Записаться на сайте')
+
+    div(style='height:224px;margin:0 0 8px 0;padding:24px 32px 0 32px;overflow:hidden;box-sizing:border-box;border-radius:8px;background-image:url(img/banners/banner-3.png);background-repeat:no-repeat;background-position:center top;background-size:100% auto;')
+        span(style='display:block;margin:0 0 20px 0;font-size:36px;line-height:40px;font-weight:bold;color:#008BD1;') Сезонное
+          br
+          |хранение
+          br
+          |шин и колес
+        +btn('Записаться на сайте', '248px')
+
+    +banner('banner-4.png','Заправка<br>автокондиционеров ','Записаться на сайте', '248px', '8', '#fff')
+    +banner('banner-2.png','Подбор запчастей<br>по VIN-коду','Смотреть на сайте', '248px', '34', '#fff')
+
+block wrapper
+  div(style=container)
+    div(style="padding:0 32px 0 32px;")
+      h1(style=h1) Вам так же может быть интересно:
+  - var category = [{bg: 'category-4.png', title: 'Авточехлы', color: '#fff'},{bg: 'category-5.png', title: 'Секретки', color: '#0079B6'},{bg: 'category-3.png', title: 'Авто электроника', color: '#0079B6'},{bg: 'category-10.png', title: 'АКБ', color: '#fff'}]
+  table(style="margin:0 0 34px 0;" width="100%" height="100%" border="0" cellspacing="0" cellpadding="0")
+    tr
+      each category__item in category
+        td(style="width:25%;height:100%;align-items:top;")
+          +category(category__item.bg,category__item.title,category__item.color)

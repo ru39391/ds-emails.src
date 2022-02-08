@@ -1,0 +1,26 @@
+extends main
+
+block meta
+  - var title = '500 бонусных рублей, проконсультироваться';
+
+block header
+  div(style=container)
+    +header('header-2.png','500 бонусных<br>рублей','Здравствуйте!<br>Недавно вы заходили на наш сайт и сравнивали некоторые товары. Сегодня мы подарим дополнительно 500 бонусных рублей на ваш счет при покупке, а если у вас остались вопросы, вы можете получить консультацию у наших менеджеров:','369','42')
+
+block header__readmore
+  div(style=container)
+    table(width="100%" height="100%" border="0" cellspacing="0" cellpadding="0")
+      tr
+        td(style="padding:10px 0 45px 0;text-align:center;")
+          +btn('проконсультироваться', '268px')
+
+block category
+  div(style=container)
+    div(style="padding:0 32px 0 32px;")
+      h1(style=h1) Вам так же может быть интересно:
+  - var category = [{bg: 'category-5.png', title: 'Секретки', color: '#0079B6'},{bg: 'category-2.png', title: 'пружины с занижением', color: '#0079B6'},{bg: 'category-6.png', title: 'Автохимия', color: '#0079B6'},{bg: 'category-7.png', title: 'Автомасла', color: '#0079B6'}]
+  table(style="margin:0 0 16px 0;" width="100%" height="100%" border="0" cellspacing="0" cellpadding="0")
+    tr
+      each category__item in category
+        td(style="width:25%;height:100%;align-items:top;")
+          +category(category__item.bg,category__item.title,category__item.color)

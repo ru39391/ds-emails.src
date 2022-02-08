@@ -1,0 +1,36 @@
+extends positions
+
+block meta
+  - var title = 'Не забудьте переобуться, зима';
+
+block header
+  div(style=container)
+    div(style="height:236px;margin:0 0 8px 0;padding:48px 32px 0 32px;overflow:hidden;box-sizing:border-box;border-radius:8px;background-image:url(img/header/header-7.png);background-repeat:no-repeat;background-position:center top;background-size:100% auto;")
+        span(style="display:block;margin:0 0 22px 0;font-size:24px;line-height:28px;font-weight:bold;color:#fff;") Здравствуйте!
+          br
+          |Не забудьте переобуться,
+          br
+          |запишитесь онлайн на сайте:
+        a(href="#" style="width:248px;padding:8px 8px 8px 8px;display:inline-block;align-items:top;font-size:16px;line-height:22px;font-weight:600;color:#fff;text-align:center;text-transform:uppercase;box-sizing:border-box;text-decoration:none;border-radius:8px;border:1px solid #fff;background-color:#008BD1;") Записаться на сайте
+
+block divider
+  div(style=container)
+    div(style="padding:0 32px 0 32px;")
+      h1(style=h1) Вам так же может быть интересно:
+  - var category = [{bg: 'category-8.png', title: 'чернитель<br>для шин', color: '#fff'},{bg: 'category-9.png', title: 'Вентиля для<br>авто', color: '#0079B6'},{bg: 'category-17.png', title: 'Крепеж для авто', color: '#0079B6'},{bg: 'category-7.png', title: 'Автомасла', color: '#0079B6'}]
+  table(style="margin:0 0 16px 0;" width="100%" height="100%" border="0" cellspacing="0" cellpadding="0")
+    tr
+      each category__item in category
+        td(style="width:25%;height:100%;align-items:top;")
+          +category(category__item.bg,category__item.title,category__item.color)
+
+block category
+  div(style=container)
+    div(style='height:224px;margin:0 0 8px 0;padding:24px 32px 0 32px;overflow:hidden;box-sizing:border-box;border-radius:8px;background-image:url(img/banners/banner-3.png);background-repeat:no-repeat;background-position:center top;background-size:100% auto;')
+        span(style='display:block;margin:0 0 20px 0;font-size:36px;line-height:40px;font-weight:bold;color:#008BD1;') Сезонное
+          br
+          |хранение
+          br
+          |шин и колес
+        +btn('Записаться на сайте', '248px')
+    +banner('banner-8.png','Прокатка<br>дисков','Записаться на сайте', '248px', '8', '#fff')

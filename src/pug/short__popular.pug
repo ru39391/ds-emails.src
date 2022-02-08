@@ -1,0 +1,15 @@
+extends short
+
+block meta
+  - var title = '100 бонусных рублей, популярные категории';
+
+block category
+  div(style=container)
+    div(style="padding:0 32px 0 32px;")
+      h1(style=h1) Вам так же может быть интересно:
+  - var category = [{bg: 'category-8.png', title: 'чернитель<br>для шин', color: '#fff'},{bg: 'category-9.png', title: 'Вентиля для<br>авто', color: '#0079B6'},{bg: 'category-4.png', title: 'Авточехлы', color: '#fff'},{bg: 'category-3.png', title: 'Авто электроника', color: '#0079B6'}]
+  table(style="margin:0 0 16px 0;" width="100%" height="100%" border="0" cellspacing="0" cellpadding="0")
+    tr
+      each category__item in category
+        td(style="width:25%;height:100%;align-items:top;")
+          +category(category__item.bg,category__item.title,category__item.color)
