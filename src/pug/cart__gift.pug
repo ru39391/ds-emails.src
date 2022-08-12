@@ -1,1 +1,22 @@
-extends main__btn
+extends cart
+
+block meta
+  - var title = 'Заберите свой подарок!';
+
+block header
+  div(style=container)
+    +header('header-9.jpg','Заберите свой<br/>подарок!','Здравствуйте! Мы обратили внимание, что Вы оставили некоторые товары к корзине. Оформите заказ сейчас и получите в подарок  зеленую незамерзающую стеклоомывающую жидкость BioExpert.','364','64','24')
+
+block header__readmore
+  div(style=container)
+    h2(style=h1) Товары в вашей корзине:
+
+block category
+  div(style=container)
+    h2(style=h1) Вам так же может быть интересно:
+  - var cards = [{src: '../img/content/card-1.png', title: 'Незамерзающая стеклоомывающая жидкость "BIOEXPERT" (-15 С)'},{src: '../img/content/card-2.png', title: 'WURTH Жидкость стеклоомывателя незамерзающая -20 3,78 л'},{src: '../img/content/card-3.png', title: 'RUSEFF Жидкость для стеклоомывателя Зимний -18°С. 4 л'},{src: '../img/content/card-4.png', title: 'RUSEFF Жидкость для стеклоомывателя Windscreen washer'}]
+  table(style="margin:0 0 8px 0;" width="100%" height="100%" border="0" cellspacing="0" cellpadding="0")
+    tr
+      each cards__item in cards
+        td(style="width:25%;height:100%;align-items:top;")
+          +card(cards__item.src,cards__item.title,'Узнать цену')

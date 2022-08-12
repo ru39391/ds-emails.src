@@ -1,1 +1,20 @@
-extends main__btn
+extends cart
+
+block meta
+  - var title = 'Обратили внимание, что вы интересовались товарами. Оформляйте заказ скорее, пока они есть на складе по старым ценам:';
+
+block header
+  div(style=container)
+    h1(style=h1__large) Здравствуйте, username!
+    div(style="margin:0 0 36px 0;")
+      h2(style=h1) #{title}. Оформляйте заказ скорее, пока они есть на складе по старым ценам:
+
+block category
+  div(style=container)
+    h2(style=h1) Вам так же может быть понравится:
+  - var cards = [{src: card__src, title: 'Зимние шины YokohamaYokohamaYokohama'},{src: card__src, title: card__title},{src: card__src, title: card__title},{src: card__src, title: card__title}]
+  table(style="margin:0 0 8px 0;" width="100%" height="100%" border="0" cellspacing="0" cellpadding="0")
+    tr
+      each cards__item in cards
+        td(style="width:25%;height:100%;align-items:top;")
+          +card(cards__item.src,cards__item.title)
